@@ -10,7 +10,9 @@
 </head>
 <body>
     <div id="header">
+        <div></div>
         <h1>Layouts do Fabio</h1>
+        <a href="https://gyorge-escola.github.io/">Voltar</a>
     </div>
     <div id="Layouts">
     </div>
@@ -39,48 +41,18 @@
         console.log(descricao["logica"]);
 
         for (let i = 0; i < layouts.length; i++) {
-            let cadadiv = document.createElement("div")
-            cadadiv.id = layouts[i]
-            cadadiv.className = "cadadiv"
-            divlayouts.appendChild(cadadiv)
-
-            let txt = document.createElement("txt")
-            txt.id = layouts[i]
-            txt.className = "txt"
-            txt.innerText = titulos[i]
-            cadadiv.appendChild(txt)
-
-            let img = document.createElement("img")
-            img.id = layouts[i]
-            img.className = "tumbs"
-            img.src = `./imgs/Tumbs/${layouts[i]}.png`
-            cadadiv.appendChild(img)
-
-            let div = document.createElement("div")
-            div.id = layouts[i]
-            div.className = "div"
-            cadadiv.appendChild(div)
-
-            let a1 = document.createElement("a")
-            a1.id = layouts[i]
-            a1.className = "a1"
-            a1.innerText = "Veja o layout"
-            a1.setAttribute('href', `./htmls/${layouts[i]}.html`);
-            div.appendChild(a1)
-
-            let a2 = document.createElement("a")
-            a2.id = layouts[i]
-            a2.className = "a2"
-            a2.innerText = "Veja o código"
-            a2.setAttribute('href', `./htmls/${layouts[i]}.html`);
-            div.appendChild(a2)
-
-            let dsc = document.createElement("dsc")
-            dsc.id = layouts[i]
-            dsc.className = "dsc"
-            dsc.innerText = descricao[layouts[i]]
-            dsc.setAttribute('href', `./htmls/${layouts[i]}.html`);
-            cadadiv.appendChild(dsc)
+            const id = layouts[i];
+            
+            divlayouts.innerHTML += `
+                <div id="${id}" class="cadadiv">
+                    <span id="${id}" class="txt">${titulos[i]}</span>
+                    <img id="${id}" class="tumbs" src="./imgs/Tumbs/${id}.png">
+                    <div id="${id}" class="div">
+                        <a id="${id}" class="botao" href="./htmls/${id}.html">Veja o layout</a>
+                    </div>
+                    <span id="${id}" class="dsc">${descricao[id]}</span>
+                </div>
+            `;
         }
     </script>
 </body>
