@@ -1,7 +1,14 @@
+:root {
+    --playerbackground: rgba(0, 70, 128,0.9);
+    --playerprogress: rgb(28, 126, 184);
+    --playertext: white;
+}
+
 body{
     color: white;
     padding: 0;
     margin: 0;
+    background-color: white;
 }
 
 #header{

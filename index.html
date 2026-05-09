@@ -13,7 +13,7 @@
     <div id="header">
         <div></div>
         <h1>Layouts do Fabio</h1>
-        <a href="https://gyorge-escola.github.io/">Voltar</a>
+        <button onclick="voltar()" id="home">Voltar</button>
     </div>
     <div id="Layouts">
     </div>
@@ -54,6 +54,14 @@
                     <span id="${id}" class="dsc">${descricao[id]}</span>
                 </div>
             `;
+        }
+
+        function voltar() {
+            if (window.self !== window.top) {
+                window.parent.deSite()
+            } else {
+                window.location.href = "https://gyorge-escola.github.io/";
+            }
         }
     </script>
 </body>
